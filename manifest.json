@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Password Paster",
-  "description": "Paste password in those website's input field where ctrl+v doesn't works",
+  "description": "Paste password in those website's input field where Ctrl+V doesn't functions",
   "version": "0.0.1",
   "icons": {
     "64": "icons/icon.png"
