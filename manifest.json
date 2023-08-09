@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Password Paster",
+  "description": "Paste password in those website's input field where ctrl+v doesn't works",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_popup": "browserAction/index.html",
+    "default_title": "Password Paster"
+  },
+  "content_scripts": [
+    {
+      "js": ["utils/browser-polyfill.min.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    },
+    {
+      "js": ["contentScripts/paster.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "permissions": ["http://*/*", "https://*/*"]
+}

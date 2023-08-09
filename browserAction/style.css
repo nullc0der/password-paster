@@ -1,0 +1,85 @@
+:root {
+  --text-color: #323031;
+  --body-color: #e7ecef;
+  --success: #4caf50;
+  --error: #ff5722;
+}
+
+body {
+  width: 250px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+}
+
+#pluginName {
+  padding: 0;
+  margin: 0;
+}
+
+#usageHint {
+  margin-left: 1rem;
+}
+
+#passwordInput {
+  padding: 1rem 0.5rem;
+  width: 200px;
+  border: 1px solid var(--text-color);
+  border-radius: 0.25rem;
+}
+
+#submitBtn {
+  margin-top: 0.5rem;
+  width: 120px;
+  padding: 0.5rem 1rem;
+  background-color: var(--text-color);
+  color: var(--body-color);
+  border: none;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.visibility-toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0.75rem;
+  right: 0.5rem;
+}
+
+.message-box {
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.message-box p {
+  padding: 0;
+  margin: 0;
+  color: var(--body-color);
+}
+
+.message-box.success {
+  background-color: var(--success);
+}
+
+.message-box.error {
+  background-color: var(--error);
+}
