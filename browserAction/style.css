@@ -35,6 +35,13 @@ p {
   margin-left: 1rem;
 }
 
+#passwordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #passwordInput {
   padding: 1rem 0.5rem;
   width: 200px;
@@ -51,6 +58,7 @@ p {
   border: none;
   border-radius: 0.25rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .password-input-wrapper {
