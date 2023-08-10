@@ -10,7 +10,7 @@ For installation you can either download from github release page or from market
 
 - [https://addons.mozilla.org/en-US/firefox/addon/password-paster/](https://addons.mozilla.org/en-US/firefox/addon/password-paster/)
 
-- [https://github.com/nullc0der/password-paster/releases][https://github.com/nullc0der/password-paster/releases]
+- [https://github.com/nullc0der/password-paster/releases](https://github.com/nullc0der/password-paster/releases)
 
 #### How to use
 
