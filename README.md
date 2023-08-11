@@ -17,5 +17,5 @@ For installation you can either download from github release page or from market
 - Choose the website's input field.
 - Launch the extension.
 - Input the password into the extension's designated field.
-- Click the "Paste" button.
+- Click the "Paste" button or press enter key.
 - And just like that, the password will be populated in the corresponding field on the website.
