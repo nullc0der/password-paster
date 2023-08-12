@@ -1,0 +1,38 @@
+.password-paster-icon {
+  position: fixed;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+  z-index: 9999;
+}
+
+.password-paster-icon:hover {
+  opacity: 1;
+}
+
+#notificationBar {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+#notificationBar.success {
+  background-color: #4caf50;
+}
+
+#notificationBar.error {
+  background-color: #ff5722;
+}
+
+#notificationBar > p {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
