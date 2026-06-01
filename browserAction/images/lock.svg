@@ -1,11 +1,51 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg fill="#323031" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 330 330" xml:space="preserve">
-<g id="XMLID_504_">
-	<path id="XMLID_505_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85
-		S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M207.481,219.356l-42.5,42.5
-		c-2.929,2.929-6.768,4.394-10.606,4.394s-7.678-1.465-10.606-4.394l-21.25-21.25c-5.858-5.858-5.858-15.354,0-21.213
-		c5.857-5.858,15.355-5.858,21.213,0l10.644,10.643l31.894-31.893c5.857-5.858,15.355-5.858,21.213,0
-		C213.34,204.002,213.34,213.498,207.481,219.356z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"/>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  width="800"
+  height="800"
+  viewBox="0 0 330 330"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Password Paster icon</title>
+  <desc id="desc">A password field with hidden characters.</desc>
+  <rect width="330" height="330" rx="72" fill="#2563eb" />
+  <path
+    fill="#1d4ed8"
+    opacity="0.28"
+    d="M282,150v92c0,22.1-17.9,40-40,40H82c-22.1,0-40-17.9-40-40v-15l104,104h117c37,0,67-30,67-67v-69l-48-45z"
+  />
+
+  <rect
+    x="54"
+    y="116"
+    width="222"
+    height="98"
+    rx="22"
+    fill="#ffffff"
+    stroke="#bfdbfe"
+    stroke-width="10"
+  />
+
+  <circle cx="101" cy="165" r="13" fill="#111827" />
+  <circle cx="145" cy="165" r="13" fill="#111827" />
+  <circle cx="189" cy="165" r="13" fill="#111827" />
+
+  <path
+    fill="none"
+    stroke="#111827"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="18"
+    d="M229,145v40"
+  />
+  <path
+    fill="none"
+    stroke="#111827"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="18"
+    d="M215,171l14,14 14-14"
+  />
 </svg>

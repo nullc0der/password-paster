@@ -2,48 +2,69 @@ const passwordInputField = document.getElementById("passwordInput");
 const submitBtn = document.getElementById("submitBtn");
 const messageBox = document.getElementById("messageBox");
 const visibilityToggle = document.getElementById("visibilityToggle");
+const visibilityToggleIcon = document.getElementById("visibilityToggleIcon");
 const passwordForm = document.getElementById("passwordForm");
 
 function showMessage(data) {
-  submitBtn.innerText = "paste";
+  submitBtn.innerText = "Paste";
+  submitBtn.disabled = false;
   messageBox.classList.remove("success", "error");
   messageBox.classList.add(data.success ? "success" : "error");
-  messageBox.innerHTML = `<p>${data.message}</p>`;
+  messageBox.replaceChildren();
+  const message = document.createElement("p");
+  message.textContent = data.message;
+  messageBox.appendChild(message);
   setTimeout(() => {
-    messageBox.innerHTML = "";
+    messageBox.replaceChildren();
     messageBox.classList.remove("success", "error");
   }, 5000);
 }
 
-passwordForm.addEventListener("submit", (e) => {
+passwordForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  function sendPassword(tabs) {
-    browser.tabs.sendMessage(tabs[0].id, {
-      command: "pastePassword",
-      password: passwordInputField.value,
-    });
-    submitBtn.innerText = "pasting";
+
+  const password = passwordInputField.value;
+  if (!password) {
+    showMessage({ success: false, message: "Enter a password first" });
+    return;
   }
-  browser.tabs
-    .query({ active: true, currentWindow: true })
-    .then(sendPassword)
-    .catch((e) => {
-      showMessage({ success: false, message: "Password couldn't be pasted" });
-      console.log(`Couldn't paste password: ${e.message}`);
+
+  submitBtn.innerText = "Pasting...";
+  submitBtn.disabled = true;
+
+  try {
+    const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+    const tab = tabs[0];
+    if (!tab || !tab.id) {
+      throw new Error("No active tab found");
+    }
+
+    const response = await browser.tabs.sendMessage(tab.id, {
+      command: "pastePassword",
+      password,
     });
+
+    if (response && response.success) {
+      passwordInputField.value = "";
+    }
+    showMessage(
+      response || { success: false, message: "Password couldn't be pasted" }
+    );
+  } catch (error) {
+    showMessage({ success: false, message: "Password couldn't be pasted" });
+    console.log(`Couldn't paste password: ${error.message}`);
+  }
 });
 
 visibilityToggle.addEventListener("click", () => {
   const passwordHidden = passwordInputField.type === "password";
+  const label = passwordHidden ? "Hide password" : "Show password";
   Object.assign(visibilityToggle, {
-    title: passwordHidden ? "Hide Password" : "Show Password",
-    innerText: passwordHidden ? "visibility_off" : "visibility",
+    title: label,
+    ariaLabel: label,
   });
+  visibilityToggleIcon.src = passwordHidden
+    ? "images/eye-off.svg"
+    : "images/eye.svg";
   passwordInputField.type = passwordHidden ? "text" : "password";
-});
-
-browser.runtime.onMessage.addListener((message) => {
-  if (message.type === "showMessage") {
-    showMessage(message.data);
-  }
 });

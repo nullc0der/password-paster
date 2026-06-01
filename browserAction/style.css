@@ -9,7 +9,8 @@ body {
   width: 250px;
   background-color: var(--body-color);
   color: var(--text-color);
-  font-family: "Poppins", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +44,9 @@ p {
 }
 
 #passwordInput {
-  padding: 1rem 0.5rem;
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 3.25rem 0 0.5rem;
   width: 200px;
   border: 1px solid var(--text-color);
   border-radius: 0.25rem;
@@ -61,6 +64,11 @@ p {
   cursor: pointer;
 }
 
+#submitBtn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 .password-input-wrapper {
   position: relative;
 }
@@ -68,8 +76,27 @@ p {
 .visibility-toggle {
   position: absolute;
   cursor: pointer;
-  top: 0.75rem;
-  right: 0.5rem;
+  top: 50%;
+  right: 0.45rem;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.visibility-toggle:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.visibility-toggle-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 3px;
 }
 
 .message-box {
